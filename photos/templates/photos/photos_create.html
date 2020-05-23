@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+<div class = "create-article">
+    <h2>Post an Awesome New Photo</h2>       <!--enctype encodes form data,always has to be where there's an upload field-->
+    <form class="site-form" action="{% url 'photos:create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" name="" value="create">
+    </form>
+</div>
+<script src= "/static/slugify.js"></script>
+{% endblock %}
