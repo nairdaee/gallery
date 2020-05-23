@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+
+<h1>Photo List</h1>
+<div class="articles">
+   {% for photo in photos%}
+    <div class= "article">
+      <h2><a href='{% url "photos:detail" slug=article.slug %}'>{{photo.title}}</article></a></h2>
+      <p>{{photo.snippet}}</p>
+      <p>{{photo.date}}</p>
+      <p class="author">Added by :  {{ photo.owner.username }}</p>
+    </div>
+   {% endfor %}
+</div>
+
+{% endblock %}
