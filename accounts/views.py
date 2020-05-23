@@ -31,3 +31,8 @@ def login_view(request):
 
         form = AuthenticationForm()
     return render(request,'accounts/login.html',{"form":form})
+
+def logout_view(request):
+    if request.method == 'POST':
+       logout(request) #will log current user out,no need to specify
+       return redirect("articles:list") #articles is the app name;list is the url name
