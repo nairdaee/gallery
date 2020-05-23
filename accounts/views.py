@@ -35,4 +35,4 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
        logout(request) #will log current user out,no need to specify
-       return redirect("articles:list") #articles is the app name;list is the url name
+       return redirect("photos:list") #articles is the app name;list is the url name
