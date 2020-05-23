@@ -3,9 +3,9 @@
 {% block content%}
 
 <h1>Photo List</h1>
-<div class="articles">
+<div class="photos">
    {% for photo in photos%}
-    <div class= "article">
+    <div class= "photo">
       <h2><a href='{% url "photos:detail" slug=article.slug %}'>{{photo.title}}</article></a></h2>
       <p>{{photo.snippet}}</p>
       <p>{{photo.date}}</p>
