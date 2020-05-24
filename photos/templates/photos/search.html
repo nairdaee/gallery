@@ -1,0 +1,29 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+
+<h1>Photo List</h1>
+<div class="photos">
+    {% if photos_searched %}
+     <div class= "photo">
+       <p>Found {{photos_searched| length}} related to {{message}}</p>
+       {% else %}
+       <p>Found no images related to {{message}}</p>
+       {% endif %}
+     </div>
+ </div>
+<div class="photos">
+   {% if photos_searhed %}
+   {% for photo in photos_searched %}
+    <div class= "photo">
+      <h2><a href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title.url}}</article></a></h2>
+      <p>{{photo.snippet.url}}</p>
+      <p>{{photo.category.url}}</p>
+      <p>{{photo.date.url}}</p>
+      <p class="author">Added by :  {{ photo.owner.username.url }}</p>
+    </div>
+   {% endfor %}
+   {% endif %}
+</div>
+
+{% endblock %}
