@@ -5,11 +5,12 @@
 
     <div class="photo">
         <img src="{{photo.thumb.url}}">
-        <h2>{{photo.title}}</h2>
-        <p>{{photo.body}}</p>
-        <p>{{photo.date}}</p>
-        <p>Location: {{photo.location}}</p>
-        <p>Category : {{photo.category}}</p>
+        <h2 class="head">{{photo.title}}</h2>
+        <p class="bodies">{{photo.body}}</p>
+        <p class="others">{{photo.date}}</p>
+        <p class="others1">Location: {{photo.location}}</p>
+        <p class="others1">Category : {{photo.category}}</p>
+        <a class="view1" href="{% url 'home' %}"><p style="color: #0f121f;">Back</p></a>
     </div>
 </div>
 

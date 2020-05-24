@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title> A.E Gallery </title>
         <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Baloo+2:wght@500&family=Chelsea+Market&family=Crimson+Text:wght@600&family=Handlee&family=Indie+Flower&family=Orbitron:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="wrapper">
@@ -15,13 +16,13 @@
                     <li>
                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">                          
                             {% csrf_token %}
-                            <button type="submit">Logout</button>
+                            <button type="submit" class="signup">Logout</button>
                         </form>
                     </li>
                     <li><a href="{% url 'photos:create' %} " class="highlight">Post photo</a></li>
                     {% else %}
-                      <li><a href="{%url 'accounts:login' %}">Login</a></li>
-                      <li><a href="{%url 'accounts:signup' %}">Signup</a></li>
+                      <li><a href="{%url 'accounts:login' %}" class="signup">Login</a></li>
+                      <li><a href="{%url 'accounts:signup' %}" class="signup">Signup</a></li>
                     {% endif %}
                 </ul>
             </nav>

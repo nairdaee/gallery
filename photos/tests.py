@@ -1,8 +1,4 @@
 from django.test import TestCase
-
-# Create your tests here.
-
-from django.test import TestCase
 from .models import Location,Category,Photos
 
 class LocationTestClass(TestCase):
@@ -20,6 +16,8 @@ class LocationTestClass(TestCase):
         self.nairobi.delete_location()
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
+
+
 class CategoryTestClass(TestCase):
     def setUp(self):
         self.clout = Category(category='Goals')

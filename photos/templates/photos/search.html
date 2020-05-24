@@ -16,11 +16,11 @@
    {% if photos_searhed %}
    {% for photo in photos_searched %}
     <div class= "photo">
-      <h2><a href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title.url}}</article></a></h2>
-      <p>{{photo.snippet.url}}</p>
-      <p>{{photo.category.url}}</p>
-      <p>{{photo.date.url}}</p>
-      <p class="author">Added by :  {{ photo.owner.username.url }}</p>
+      <h2><a href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title}}</article></a></h2>
+      <p>{{photo.snippet}}</p>
+      <p>{{photo.category}}</p>
+      <p>{{photo.date}}</p>
+      <p class="author">Added by :  {{ photo.owner.username }}</p>
     </div>
    {% endfor %}
    {% endif %}
