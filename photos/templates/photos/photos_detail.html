@@ -11,8 +11,33 @@
         <p class="others1">Location: {{photo.location}}</p>
         <p class="others1">Category : {{photo.category}}</p>
         <a class="view1" href="{% url 'home' %}"><p style="color: #0f121f;">Back</p></a>
+        <a class=" view"  style=" background: #00dba0;"title="Copy image url " onclick="copy_Share_Button();"><i class="far fa-clipboard"></i></a>
+        <script>
+
+            function copy_Share_Button() {
+        
+                //----< copy_Share_Button() >----
+        
+                var sURL = window.location.href;
+        
+                sTemp = "<input id=\"copy_to_Clipboard\" value=\"" + sURL + "\" />"
+        
+                $("body").append(sTemp);
+        
+                $("#copy_to_Clipboard").select();
+        
+                document.execCommand("copy");
+        
+                $("#copy_to_Clipboard").remove();        
+        
+                //----</ copy_Share_Button() >----
+        
+            }
+        
+            //
+        
+        </script>
+
     </div>
 </div>
-
-
 {% endblock %}

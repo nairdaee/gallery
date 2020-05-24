@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Photos,Location, Category
-from django.http import HttpResponse,Http404
-from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponse
 from . import forms
 from django.contrib.auth.decorators import login_required
 
@@ -21,6 +20,7 @@ def photo_create(request):
 
 
 def search_photos(request):
+
     if 'photo' in request.GET and request.GET["photo"]:
         search_term = request.GET.get("photo")
         search_photos = Photos.search_by_category(search_term)
@@ -46,10 +46,6 @@ def photo_list(request):
     return render(request,'photos/photos_list.html', {'photos': photos})
 
 def photo_detail(request,slug):
-    try:
-        photo = Photos.objects.get(slug=slug)   
+    photo = Photos.objects.get(slug=slug)   
               ##photo = get_object_or_404(Photos, slug=slug)
-    except ObjectDoesNotExist:
-        raise Http404()
     return render(request,"photos/photos_detail.html",{'photo':photo})
-

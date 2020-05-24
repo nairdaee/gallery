@@ -2,7 +2,9 @@
 
 {% block content%}
 <div class = "create-article">
-    <h2>Post an Awesome New Photo</h2>       <!--enctype encodes form data,always has to be where there's an upload field-->
+    <h2>Post an Awesome New Photo</h2>
+    <a class="back" href="{% url 'home' %}"><p style="color: #0f121f;">Back</p></a>
+    <!--enctype encodes form data,always has to be where there's an upload field-->
     <form class="site-form" action="{% url 'photos:create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{form}}
