@@ -5,4 +5,4 @@ from . import models
 class CreatePhoto(forms.ModelForm):
     class Meta: #defines fields to be present and from which model they will be inherited.
         model = models.Photos
-        fields = ['title','body','slug','thumb']
+        fields = ['title','body','slug','thumb','location','category']
