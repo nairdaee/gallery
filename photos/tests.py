@@ -46,19 +46,3 @@ class PhotosTestCase(TestCase):
 
         self.new_photo = Photos(title='Any',body='Caption',location=self.buru,category=self.sports)
         self.new_photo.save_photo()
-
-    def test_save_image(self):
-        self.photo_test.save()
-        photos = Photos.objects.all()
-        self.assertTrue(len(photos)>0)
-
-    def test_delete_photo(self):
-        self.photo_test.save()
-        self.photo_test.delete()
-        photos  = Photos.objects.all()
-        self.assertTrue(len(photos)==0)
-
-    def test_get_photo_by_id(self):
-        found_photo = self.photo_test.get_photo_by_id(self.photo_test.id)
-        img = Photos.objects.filter(id=self.photo_test.id)
-        self.assertTrue(found_photo,img)
