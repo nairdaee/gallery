@@ -16,7 +16,7 @@
    {% if photos_searhed %}
    {% for photo in photos_searched %}
     <div class= "photo">
-      <h2><a href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title}}</article></a></h2>
+      <h2><a href='{% url "photos:detail" slug=photo.slug %}'>{{photo1.title}}</article></a></h2>
       <p>{{photo.snippet}}</p>
       <p>{{photo.category}}</p>
       <p>{{photo.date}}</p>

@@ -16,11 +16,11 @@
     </form>
 </div>
 
-<h1 class="head">Photo List</h1>
+<h1 class="head">My photos</h1>
 <div class="photos">
    {% for photo in photos%}
     <div class= "photo">
-      <h2><a class="head" href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title}}</article></a></h2>
+      <h2><a class="head" href='{% url "photos:detail" slug=photo.slug %}'>{{photo.title}}</a></h2>
       <p class="bodies">{{photo.snippet}}</p>
       <p class= "others">{{photo.date}}</p>
       <a class="view" href='{% url "photos:detail" slug=photo.slug %}'>View pic</a>

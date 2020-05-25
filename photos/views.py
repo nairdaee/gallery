@@ -39,13 +39,20 @@ def filter_location(request,photo_id):
         located_photos = Photos.objects.filter(location=photo_id)
     except DoesNotExist:
         raise Http404()
-        return render(request,'photos/photos_detail.html',{"located_images":located_images,"locations":location})
+        return render(request,'photos/photos_detail.html',{"located_photos":located_photos,"locations":location})
 
 def photo_list(request):
     photos = Photos.objects.all().order_by('date')
     return render(request,'photos/photos_list.html', {'photos': photos})
 
 def photo_detail(request,slug):
-    photo = Photos.objects.get(slug=slug)   
+    photo = Photos.objects.get(slug=slug)  
+    photo1 = Photos.objects.filter(slug=slug)
               ##photo = get_object_or_404(Photos, slug=slug)
-    return render(request,"photos/photos_detail.html",{'photo':photo})
+    return render(request,"photos/photos_detail.html",{'photo':photo},{'photo1':photo1})
+
+def error_404(request):
+    return render(request, "photos/error_404.html")
+
+def error_500(request):
+    return render(request,"photos/error_500.html")
