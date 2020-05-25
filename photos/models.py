@@ -36,7 +36,7 @@ class Photos(models.Model):
     slug = models.SlugField()
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    thumb = models.ImageField(default='default.png',blank= True)
+    thumb = models.ImageField(default= None,blank= True)
     owner = models.ForeignKey(User, default= None)
     category = models.ForeignKey(Category)
     location = models.ForeignKey(Location)
