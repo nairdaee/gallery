@@ -18,7 +18,7 @@
 
 ### Technologies used
 
-`Python version 3.7 `
+> `Python version 3.7 `
 
 
 ### Setup
@@ -36,7 +36,7 @@
 - Click on create photo to upload your own photo
 
 ### Known Bugs
-No known bugs
+> No known bugs
 
 ### Live site
 
