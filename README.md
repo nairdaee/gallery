@@ -2,12 +2,12 @@
 
 ### Author
 
-Adrian Etenyi
-Created on May 25 , 2020
+> Adrian Etenyi
+> Created on May 25 , 2020
 
 ### Description
 
-This is a personal gallery application that you display my photos for others to see.
+> This is a personal gallery application that you display my photos for others to see.
 
 ## User Stories
 * View different photos that interest me.
